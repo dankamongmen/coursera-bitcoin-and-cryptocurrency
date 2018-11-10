@@ -27,12 +27,13 @@ public class Simulation {
       // pick which nodes are malicious and which are compliant
       Node[] nodes = new Node[numNodes];
       for (int i = 0; i < numNodes; i++) {
-         if(Math.random() < p_malicious)
+         if(Math.random() < p_malicious) {
             // When you are ready to try testing with malicious nodes, replace the
             // instantiation below with an instantiation of a MaliciousNode
-            nodes[i] = new MalDoNothing(p_graph, p_malicious, p_txDistribution, numRounds);
-         else
+            // nodes[i] = new MalDoNothing(p_graph, p_malicious, p_txDistribution, numRounds);
+	 } else {
             nodes[i] = new CompliantNode(p_graph, p_malicious, p_txDistribution, numRounds);
+	 }
       }
 
 
